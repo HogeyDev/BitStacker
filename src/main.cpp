@@ -1,13 +1,14 @@
 #include "board.h"
 #include "window.h"
 #include <SDL2/SDL.h>
-#include <iostream>
 
 int main() {
-  Window window = Window();
+  Window window = Window(1280, 720);
   Board board = Board();
 
   while (true) {
+    board.tick();
+
     window.clear();
     window.drawBoard(board);
     window.pollEvents();
